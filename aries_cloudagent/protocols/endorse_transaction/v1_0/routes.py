@@ -164,11 +164,11 @@ async def transaction_record_create(request: web.BaseRequest):
 
     transaction_message_keys = transaction_message.keys()
 
-    if transaction_type == "SCHEMA" and  ("schema_name" not in transaction_message_keys or "schema_version" not in transaction_message_keys or "attributes" not in transaction_message_keys):
-        return web.json_response({"error": "You have selected transaction type as SCHEMA and given a wrong payload"})
+    #if transaction_type == "SCHEMA" and  ("schema_name" not in transaction_message_keys or "schema_version" not in transaction_message_keys or "attributes" not in transaction_message_keys):
+        #return web.json_response({"error": "You have selected transaction type as SCHEMA and given a wrong payload"})
 
-    if transaction_type == "CREDENTIAL_DEFINITION" and ("revocation_registry_size" not in transaction_message_keys or "schema_id" not in transaction_message_keys or "support_revocation" not in transaction_message_keys or "tag" not in transaction_message_keys):
-        return web.json_response({"error": "You have selected transaction type as CREDENTIAL_DEFINITION and given a wrong payload"})
+    #if transaction_type == "CREDENTIAL_DEFINITION" and ("revocation_registry_size" not in transaction_message_keys or "schema_id" not in transaction_message_keys or "support_revocation" not in transaction_message_keys or "tag" not in transaction_message_keys):
+        #return web.json_response({"error": "You have selected transaction type as CREDENTIAL_DEFINITION and given a wrong payload"})
 
     
     connection = await ConnRecord.retrieve_by_id(context, connection_id)
